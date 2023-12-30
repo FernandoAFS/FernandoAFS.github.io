@@ -7,7 +7,10 @@ draft = false
 tags = ["pdf", "templating", "python", "libreoffice"]
 +++
 
+[TL;DR: Check out the code.](https://github.com/FernandoAFS/pdf-christmas-card-factory)
+
 # Introduction
+
 
 I'm making a christmas card pdf factory. There are many ways to go about it. Let's find out how.
 
@@ -20,7 +23,7 @@ I was making a Python application so this is what I found:
 I haven't even tried the following:
 
 - [myPDF](https://pypi.org/project/pypdf/): It's about manipulating pdf files, not generating new ones.
-- [Pylatex](https://pypi.org/project/PyLaTeX/): Good for papers, not the best for a christmas card!
+- [Pylatex](https://pypi.org/project/PyLaTeX/): Good for papers, not the best for a Christmas card!
 - [ReportLab](https://pypi.org/project/reportlab/): To be hones I found it way to complex and it's focused on reporting.
 
 ## xhtml2pdf
@@ -29,7 +32,7 @@ I haven't even tried the following:
 
 [Xhtml2pdf](https://pypi.org/project/xhtml2pdf/) is a very interesting tool that creates PDF from html technologies.
 
-I'm not good with CSS, I haven writeen "raw" CSS in ages.
+I'm not good with CSS, I haven written "raw" CSS in ages.
 
 There is nothing wrong with this one but I've spent a whole day trying to produce something good looking without luck.
 
@@ -42,7 +45,7 @@ I would recommend to check this out if:
 
 > WeasyPrint is a smart solution helping web developers to create PDF documents. It turns simple HTML pages into gorgeous statistical reports, invoices, tickets…
 
-[Weasyprint](https://pypi.org/project/weasyprint/) is very simmilar to the last one with prettier documentation and more "modern" feel. But I has the problems as the first one.
+[Weasyprint](https://pypi.org/project/weasyprint/) is very similar to the last one with prettier documentation and more "modern" feel. But I has the problems as the first one.
 
 # Looking for another way
 
@@ -58,18 +61,18 @@ This is what I would recommend:
 
 # Let's start coding
 
-I'm going to create a personalized christmas card.
+I'm going to create a personalized Christmas card.
 
-You can find everyting in my repo.
+You can find everything in my repo.
 
 ## Create the template document
 
 For this I'm going to use a [template from slidesgo](https://slidesgo.com/theme/cute-christmas-cards-collection).
 
 **Note**: If you come from a PowerPoint slide I'd recommend to
-create a new new Libreoffice document and to copy-and-paste manuall each slide you are going to use one by one and to re-insert every image that is going to be changed programatically. Libreoffice generates much simpler XML templates when used natively.
+create a new new libreoffice document and to copy-and-paste manual each slide you are going to use one by one and to re-insert every image that is going to be changed programmatically. Libreoffice generates much simpler XML templates when used natively.
 
-![Merry christmas Tim Cook](tim-cook-christmas.jpg)
+![Merry Christmas Tim Cook](tim-cook-christmas.jpg)
 
 Let's [save this](document.fodp) as .fodp (Flat XML ODF Presentation).
 
@@ -85,7 +88,7 @@ In the line 6218 i find:
 </text:span></text:p>
 ```
 
-In the line 10336 start the file object. If we copy the B64 string and use the following command we can see that it's just a png image:
+In the line 10336 start the file object. If we copy the base64 string and use the following command we can see that it's just a png image:
 
 ```bash
 < b64_contents.txt base64 --decode | file -
@@ -161,7 +164,7 @@ Let's check the pdf conversion. I'm reading from stdin directly but you can dump
 python christmas-card-factory.py --action fodp "Tim Cook" assets/Tim-Cook-Circle.png | unoconvert --convert-to pdf - - > tim_cook_merry_christmas.pdf
 ```
 
-Now, let's see how to create documents programatically.
+Now, let's see how to create documents programmatically.
 
 ## Automating the conversion to pdf
 
@@ -239,11 +242,13 @@ Now we can do:
 python christmas-card-factory.py  --action pdf "Tim Cook" assets/Tim-Cook-Circle.png | zathura -
 ```
 
-This is very powerfull if you want to do this in an automated environment. To run this in a production environment just wrap unoserver in a micoservice and tinker a bit (if at all) with the client.
+This is very powerful if you want to do this in an automated environment. To run this in a production environment just wrap unoserver in a micoservice and tinker a bit (if at all) with the client.
 
 You can use an [executor](https://docs.python.org/3/library/concurrent.futures.html#threadpoolexecutor) to run the unoserver.client in an async environment or you can even write your own client with an async [xml-rpc library](https://pypi.org/project/async-rpc/).
 
 # Wrapping up
+
+You can check everything out [in my repo demo](https://github.com/FernandoAFS/pdf-christmas-card-factory).
 
 I've used a presentation but you can apply the same principle for documents and spread sheets.
 
@@ -252,7 +257,7 @@ There is a few takeaways I got from all this:
 - There is so much attention in web technologies that I forgot to look elsewhere.
 - Sometimes the easy way turns very hard very quickly. There are pdf-generation libraries but I think this solution is easier for most "standard" pdf generation solutions.
 
-I think this solution follows the "do one thing and do it right". Let an office suite generate the template. Use a template language to generate the document and finally use a server application to convert it to PDF. This is what good software should aim to be. **It's great to find an stablished technology and use it in a new way.**
+I think this solution follows the "do one thing and do it right". Let an office suite generate the template. Use a template language to generate the document and finally use a server application to convert it to PDF. This is what good software should aim to be. **It's great to find an established technology and use it in a new way.**
 
 There is no complex library, just plain old XML. Unoserver isn't particularly fancy either. It's a wrapper over libreoffie with an xml-rpc layer. If you already know-use template environments I would consider this approach to generate slight variations against other alternatives such as [openpyxl](https://pypi.org/project/openpyxl/) or [json2pdf](https://docs.reportlab.com/json2pdf/).
 
