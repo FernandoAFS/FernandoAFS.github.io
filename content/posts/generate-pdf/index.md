@@ -4,6 +4,7 @@ description = "Let's compare how to generate documents and find the most conveni
 date = 2023-12-30T12:14:50+01:00
 type = "post"
 draft = false
+image = "etsy_christmas_card.jpg"
 tags = ["pdf", "templating", "python", "libreoffice"]
 +++
 
