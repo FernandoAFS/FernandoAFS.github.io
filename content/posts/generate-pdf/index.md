@@ -249,6 +249,30 @@ This is very powerful if you want to do this in an automated environment. To run
 
 You can use an [executor](https://docs.python.org/3/library/concurrent.futures.html#threadpoolexecutor) to run the unoserver.client in an async environment or you can even write your own client with an async [xml-rpc library](https://pypi.org/project/async-rpc/).
 
+# Going further
+
+This is a very small example. You can make this as big as you like. You can use more complex jinja features such base templates and macros. I would recommend to do something like this:
+
+1. Create a base template: This is the whole document with the modified pages hollowed out
+2. Create a macro for each page. Pages are between `<draw:page>` tags.
+4. Loop over the the object in the document page.
+
+```xml
+{% from "page/page_a.xml" import page_a_macro %}
+{% from "page/page_b.xml" import page_b_macro %}
+{% extends "template/my_base.xml" %}
+{% block content %}
+	{% for object in iterable %}
+        {{page_a_macro(object)}}
+        {{page_b_macro(object)}}
+	{% endfor %}
+{% endblock %}
+```
+
+**Be carefull with white spaces in the beginning of the template render**. If there are blank lines in the beginning of the template it will be treated as plaintext. Your can be a [jinja2 ninja and use this trick](https://tedboy.github.io/jinja2/templ6.html) or you can just do `template.render().strip()` 😀.
+
+You can also apply the same principle to
+
 # Wrapping up
 
 You can check everything out [in my repo demo](https://github.com/FernandoAFS/pdf-christmas-card-factory).
