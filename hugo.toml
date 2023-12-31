@@ -34,14 +34,6 @@ enableRobotsTXT = true
     url = "/tags/"
     weight = 2
 
-  [[menu.main]]
-    identifier = "github"
-    url = "https://github.com/FernandoAFS?tab=repositories"
-    weight = 3
-
-    # We use feather-icons: https://feathericons.com/
-    pre = "<span data-feather='github'></span>"
-
   #[[menu.main]]
   #  identifier = "projects"
   #  url = "/projects/"
@@ -50,23 +42,21 @@ enableRobotsTXT = true
   #  pre = "<span data-feather='code'></span>"
 
   [[menu.main]]
-    identifier = "linkedin"
+    identifier = "rss"
 
-    url = "https://www.linkedin.com/in/fernando-fernandez-soto"
+    url = "/index.xml"
     weight = 3
     # We use feather-icons: https://feathericons.com/
-    pre = "<span data-feather='linkedin'></span>"
-
-
-  [[menu.main]]
-    identifier = "email"
-
-    url = "mailto:fernando.andeca@gmail.com"
-    weight = 3
-    # We use feather-icons: https://feathericons.com/
-    pre = "<span data-feather='mail'></span>"
+    pre = "<span data-feather='rss'></span>"
 
 
 [params]
+  avatarURL = "/images/avatar.jpg"
   description = "Personal blog about all things code related"
   showPostsOnHomePage = "recent"
+  socialIcons = [
+    {name = "linkedin", url = "https://www.linkedin.com/in/fernando-fernandez-soto"},
+    {name = "email", url = "mailto:fernando.andeca@gmail.com"},
+    {name = "github", url = "https://github.com/FernandoAFS"},
+  ]
+
