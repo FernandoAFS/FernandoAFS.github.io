@@ -16,6 +16,7 @@ tags = ["pdf", "templating", "python", "libreoffice"]
 I'm making a christmas card pdf factory. There are many ways to go about it. Let's find out how.
 
 ![Let's do code as craft. source: Etsy](etsy_christmas_card.jpg)
+*Credit to EdenwoodPaperie. Published on [Etsy](https://www.etsy.com/listing/889493692/folded-christmas-card-template-5x7-happy)*
 
 # State of the art
 
@@ -33,7 +34,7 @@ I haven't even tried the following:
 
 [Xhtml2pdf](https://pypi.org/project/xhtml2pdf/) is a very interesting tool that creates PDF from html technologies.
 
-I'm not good with CSS, I haven written "raw" CSS in ages.
+I'm not good with CSS and this is not an easy one. There is a [good post on MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_media_queries/Printing) if you are interested.
 
 There is nothing wrong with this one but I've spent a whole day trying to produce something good looking without luck.
 
@@ -74,6 +75,7 @@ For this I'm going to use a [template from slidesgo](https://slidesgo.com/theme/
 create a new new libreoffice document and to copy-and-paste manual each slide you are going to use one by one and to re-insert every image that is going to be changed programmatically. Libreoffice generates much simpler XML templates when used natively.
 
 ![Merry Christmas Tim Cook](tim-cook-christmas.jpg)
+*Whish you a great christmas mr Tom Cook*
 
 Let's [save this](document.fodp) as .fodp (Flat XML ODF Presentation).
 

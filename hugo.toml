@@ -51,7 +51,7 @@ enableRobotsTXT = true
 
 
 [params]
-  avatarURL = "/images/avatar.jpg"
+  avatarURL = "/images/avatar.webp"
   description = "Personal blog about all things code related"
   showPostsOnHomePage = "recent"
   socialIcons = [
