@@ -12,6 +12,7 @@ enableRobotsTXT = true
 enableEmoji = true
 
 [menu]
+
   [[menu.main]]
     # Unique identifier for a menu item
     identifier = "posts"
@@ -44,10 +45,19 @@ enableEmoji = true
   #  pre = "<span data-feather='code'></span>"
 
   [[menu.main]]
+    identifier = "About"
+
+    url = "/pages/about-me"
+    weight = 3
+    # We use feather-icons: https://feathericons.com/
+    name = "About"
+
+
+  [[menu.main]]
     identifier = "rss"
 
     url = "/index.xml"
-    weight = 3
+    weight = 10
     # We use feather-icons: https://feathericons.com/
     pre = "<span data-feather='rss'></span>"
 
@@ -60,5 +70,6 @@ enableEmoji = true
     {name = "linkedin", url = "https://www.linkedin.com/in/fernando-fernandez-soto"},
     {name = "email", url = "mailto:fernando.andeca@gmail.com"},
     {name = "github", url = "https://github.com/FernandoAFS"},
+    {name = "mastodon", url = "https://mastodon.social/home"},
   ]
 
