@@ -20,14 +20,3 @@ If you'd like to contact me just write me an [email](mailto:fernando.andeca@gmai
 To stay up to date use [RSS](/index.xml). you can follow me on [mastodon](https://mastodon.social/@fernandoAFS) too.
 
 Remember, there is no magic, only code!
-
-# What I'm doing
-
-## Propietary
-
-- Consultant for [Cursoriam Bikes](https://www.cursoriambikes.com/). Helping them scale and increase customer conversion.
-- Battery-control system for industrial and residential applications. The point is to give best resutls to users with multiple energy sources
-
-## FOSS
-
-_Coming soon. Stay tuned._
