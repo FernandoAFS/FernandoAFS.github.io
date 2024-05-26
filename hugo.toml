@@ -72,4 +72,7 @@ enableEmoji = true
     {name = "github", url = "https://github.com/FernandoAFS"},
     {name = "mastodon", url = "https://mastodon.social/home"},
   ]
+  customHeadHTML = '''
+    <script defer data-domain="codevsevil.com" src="https://plausible.codevsevil.xyz/js/script.js"></script>
+  '''
 
