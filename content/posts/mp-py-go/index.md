@@ -4,8 +4,10 @@ description = "Let's how golang and python scale to multiple cores"
 date = 2024-11-09T21:57:29+01:00
 type = "post"
 draft = false
+image = "python-vs-go.png"
 tags = ["python", "go", "concurrency", "benchmark"]
 +++
+
 
 All code is available on [my github repo](https://github.com/FernandoAFS/multiprocess-python-go).
 
@@ -14,6 +16,10 @@ All code is available on [my github repo](https://github.com/FernandoAFS/multipr
 I've been working on a embedded/electronic control project. It was started in Python because it involved machine learning to an extent and because we assume that Python is the tool for every job pretty much.
 
 Python is a great language and it's ML libraries are second to none, but it's type system, it's dependency environment... I found it very hard to write safe code that I'm very sure about. Generating a docker image below 1.5Gb is also almost impossible.
+
+![python-vs-go. Credit to https://bitfieldconsulting.com/posts/go-vs-python](python-vs-go.png)
+
+_Image borrowed from the awesome [Bitfield Consulting](https://bitfieldconsulting.com/posts/go-vs-python)_
 
 The more I worked with it the more I missed Go for it's compiled artefacts, performance and specially it's multiprocess capabilities.
 
