@@ -8,8 +8,9 @@ image = "python-vs-go.png"
 tags = ["python", "go", "concurrency", "benchmark"]
 +++
 
-
 All code is available on [my github repo](https://github.com/FernandoAFS/multiprocess-python-go).
+
+![python-vs-go. Credit to https://bitfieldconsulting.com/posts/go-vs-python](python-vs-go.png)
 
 # Introduction
 
@@ -17,14 +18,21 @@ I've been working on a embedded/electronic control project. It was started in Py
 
 Python is a great language and it's ML libraries are second to none, but it's type system, it's dependency environment... I found it very hard to write safe code that I'm very sure about. Generating a docker image below 1.5Gb is also almost impossible.
 
-![python-vs-go. Credit to https://bitfieldconsulting.com/posts/go-vs-python](python-vs-go.png)
-
 _Image borrowed from the awesome [Bitfield Consulting](https://bitfieldconsulting.com/posts/go-vs-python)_
 
 The more I worked with it the more I missed Go for it's compiled artefacts, performance and specially it's multiprocess capabilities.
 
 I wanted to challenge my assumptions and check if Python multiprocess capabilities are up to the task.
 
+## Motivation:
+
+!["beautifull" code vs efficient concurrency. https://devopedia.org/go-language](multiproc_graph.png)
+
+_Graph of beautiful code vs efficiency of concurrency. Seen at [devopedia](https://devopedia.org/go-language)_
+
+Go has been marketed as a solution to write beautifull concurrent code. Go has an amazing syntax for concurrent programming.
+
+I want to test to what extent this is true for simple parallel processing.
 
 ## Notes:
 
