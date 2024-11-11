@@ -1,5 +1,5 @@
 +++
-title = 'Multiprocessing. Python vs Go'
+title = 'Python vs Go - Parallelization benchmarks'
 description = "Let's how golang and python scale to multiple cores"
 date = 2024-11-09T21:57:29+01:00
 type = "post"
@@ -12,27 +12,19 @@ All code is available on [my github repo](https://github.com/FernandoAFS/multipr
 
 ![python-vs-go. Credit to https://bitfieldconsulting.com/posts/go-vs-python](python-vs-go.png)
 
-# Introduction
+_Image borrowed from the awesome [Bitfield Consulting](https://bitfieldconsulting.com/posts/go-vs-python)_
 
-I've been working on a embedded/electronic control project. It was started in Python because it involved machine learning to an extent and because we assume that Python is the tool for every job pretty much.
+# Introduction
 
 Python is a great language and it's ML libraries are second to none, but it's type system, it's dependency environment... I found it very hard to write safe code that I'm very sure about. Generating a docker image below 1.5Gb is also almost impossible.
 
-_Image borrowed from the awesome [Bitfield Consulting](https://bitfieldconsulting.com/posts/go-vs-python)_
-
 The more I worked with it the more I missed Go for it's compiled artefacts, performance and specially it's multiprocess capabilities.
-
-I wanted to challenge my assumptions and check if Python multiprocess capabilities are up to the task.
-
-## Motivation:
 
 !["beautifull" code vs efficient concurrency. https://devopedia.org/go-language](multiproc_graph.png)
 
 _Graph of beautiful code vs efficiency of concurrency. Seen at [devopedia](https://devopedia.org/go-language)_
 
-Go has been marketed as a solution to write beautifull concurrent code. Go has an amazing syntax for concurrent programming.
-
-I want to test to what extent this is true for simple parallel processing.
+Go has been marketed as a solution to write beautifull concurrent code. Go has an amazing syntax for concurrent programming. Aside from developer experience I want to test to what extent it compares to Python in single-threaded and multi-threaded benchmarks.
 
 ## Notes:
 
@@ -68,7 +60,7 @@ func calculatePi(nIter int64) (float64){
 
     for n := int64(0); n < nIter; n++{
         numerator = math.Sqrt(2.0 + numerator)
-        pi= pi * (numerator / 2.0)
+        pi = pi * (numerator / 2.0)
     }
 
     return (1.0 / pi) * 2.0
@@ -312,7 +304,6 @@ def main_sp():
 
 if __name__ == "__main__":
     # PARSE ARGS AND RUN MAIN_MP OR MAIN_SP
-
 ```
 
 Go:
@@ -411,8 +402,6 @@ func mpRef(nProc int64) {
 func main() {
     # RUN EITHER FUNCTION (mp or sp)
 }
-
-
 ```
 
 ### Results
