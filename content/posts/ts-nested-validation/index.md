@@ -308,6 +308,9 @@ We can see one of the superpowers of generators. If there is a broken segment at
 
 Now, on top of this the _main_ route needs to start in a source and end in a sink while alternate routes will only need to end in a sink.
 
+![Truck moving to the hills](pexels-photo-93398.jpeg)
+_This is you on your way to deliver a validated datastructure. ([pexel](https://www.pexels.com/photo/white-truck-on-black-road-1003868/))_
+
 ```typescript
 /**
  * Validate that function is valid and it begins and ends where it should.
