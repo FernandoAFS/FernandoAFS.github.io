@@ -73,6 +73,7 @@ enableEmoji = true
     {name = "mastodon", url = "https://mastodon.social/home"},
   ]
   customHeadHTML = '''
-    <script defer data-domain="codevsevil.com" src="https://plausible.codevsevil.xyz/js/script.js"></script>
+    <script defer data-domain="codevsevil.xyz" src="https://plausible-ax0ii-u12829.vm.elestio.app/js/script.hash.js"></script>
+<script>window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }</script>
   '''
 
